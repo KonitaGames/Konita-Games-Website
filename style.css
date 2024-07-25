@@ -1,0 +1,346 @@
+html, body {
+    background-color: #656565 !important;
+    overflow-x: hidden
+}
+
+.navbar {
+    background-color: black !important;
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1.25rem;
+    margin-right: 20px;
+}
+
+.nav-link:hover {
+    color: #ddd !important;
+}
+
+p,li {
+    color: white;
+}
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.videos {
+    background-color: black;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-youtube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    color: white;
+    background-color: black !important;
+}
+
+.social-media-icons-white a {
+    color: white;
+    font-size: 2rem;
+}
+
+.social-media-icon {
+    margin-right: 1rem;
+}
+
+.follow-us-text {
+    margin-top: 0.5rem;
+    color: white;
+}
+
+.footer-text {
+    margin-top: 0.5rem;
+    color: white;
+    text-align: center;
+}
+
+.app-store-img-group {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+h1,h2,h3,h4,h5 {
+    color: white;
+}
+
+.footer-margin-bottom {
+    font-size: 45%;
+}
+
+.slider-wrapper {
+    position: relative;
+    margin: 70px auto 0; /* Add 70px to the top margin to match the navbar height */
+    overflow: hidden;
+    padding-top: 20px; /* Add some space above the slider images */
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out; /* Added transition for smooth sliding */
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    height: 100%;
+    object-fit: cover; /* This makes the image cover the container */
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.image-container {
+    width: 99%;
+    height: 100%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s ease; /* Add smooth transition for image containers */
+}
+
+
+
+#slide-1:hover, #slide-2:hover, #slide-3:hover {
+    opacity: 0.5;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-text {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 40px;
+    padding-top:45%;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: black;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 200%;
+}
+
+
+.video-slider-arrow {
+    position: absolute;
+    transform: translateY(150%);
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: black;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 200%;
+}
+.slider-arrow-left {
+    left: 10px;
+}
+
+.slider-arrow-right {
+    right: 10px;
+}
+
+.video-slider-arrow-left {
+    left: 14%;
+}
+
+.video-slider-arrow-right {
+    right: 14%;
+}
+
+.app-store-img{
+    border: none; /* Remove border */
+}
+
+.video-challenges-scroll-container, .video-scratch-tutorials-scroll-container, .video-purse-pursuit-devlogs-scroll-container {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.video-purse-pursuit-devlogs-scroll-container iframe {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.video-challenges-scroll-container iframe {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.video-scratch-tutorials-scroll-container iframe {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+.Subscribe-to-Konita img:hover {
+    opacity: 0.8;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.contact{
+    min-height: 50vh;
+    text-align: center;
+}
+
+.contact-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container h2{
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.container-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+
+.contact-form{
+    text-align: left;
+}
+
+.contact-form h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+input, textarea{
+    width:100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+    color:#333;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    box-shadow: 0 0 8px #bbb;
+}
+
+button{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3a3a3a;
+    color: #fff;
+    border: none;
+    cursor:pointer;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background-color: #282828;
+}
+
+.contact-info{
+    text-align: right;
+}
+
+.contact-info h3{
+    font-size:24px;
+    margin-bottom: 20px;
+}
+
+.contact-info p{
+    margin-bottom: 10px;
+}
+
+.contact-info i{
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        padding:20px;
+    }
+    .container-wrapper{
+        grid-template-columns: 1fr;
+    }
+}

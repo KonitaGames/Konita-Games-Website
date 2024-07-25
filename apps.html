@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/807a58a5a3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Konita</title>
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/KG LOGO SOLO.png" alt="Konita Logo" >
+        </a>
+        <a href="index.html"><img src="images/KG%20LOGO%20SOLO2.png" width="280px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="apps.html">Apps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="games.html">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="videos.html">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mission.html">Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customer-service.html">Customer Service</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="slider-wrapper">
+        <div class="slider">
+
+            <div class="image-container">
+                <img id="slide-1" src="images/purse-pursuit%20banner.png">
+                <a href="purse-pursuit-trailer.html"><div class="overlay"><p class="image-text">Watch Purse Pursuit Trailer</p></div></a>
+            </div>
+
+            <div class="image-container">
+                <img id="slide-2" src="images/I%20made%20Need%20for%20Speed%20in%20Scratch%20Thumbnail.jpg">
+                <a href="https://www.youtube.com/watch?v=c_sOJyGF-c4&t=86s"><div class="overlay"><p class="image-text">I Made Need for Speed in Scratch</p></div></a>
+            </div>
+
+            <div class="image-container">
+                <img id="slide-3" src="images/Google%20Play%20Banner.png">
+                <a href="https://www.youtube.com/@Konita_YT"><div class="overlay"><p class="image-text">Watch the Konita YouTube Channel</p></div></a>
+            </div>
+
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+        <button class="slider-arrow slider-arrow-left" onclick="prevSlide()">&#10094;</button>
+        <button class="slider-arrow slider-arrow-right" onclick="nextSlide()">&#10095;</button>
+    </div>
+    </div>
+
+<p>No Apps are Available at the moment.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBgPsLgpUAZxET/FBdMghH9I8e3rS3GcOqKfsc8mI4V2xB03" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-pprn3073KE6tl6/5eV9gIJlbKq1lRj3VcKVRz4VuPIlM9I6wdfiDthz7zYYfC5b" crossorigin="anonymous"></script>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.image-container');
+    const totalSlides = 6;
+    let slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+    function showSlide(index) {
+        const imageContainers = document.querySelectorAll('.image-container');
+        imageContainers.forEach((container, i) => {
+            container.style.transform = `translateX(${(i - index) * 100}%)`;
+
+        });
+    }
+
+    function prevSlide() {
+        if(currentSlide!== 0)
+        {
+            currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 2;
+        }
+        showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide === totalSlides - 2) ? 0 : currentSlide + 2;
+        showSlide(currentSlide);
+    }
+
+    // Pause slide interval when mouse is over the slider
+    document.querySelector('.slider-wrapper').addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+
+    // Resume slide interval when mouse leaves the slider
+    document.querySelector('.slider-wrapper').addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Initialize the slider
+    showSlide(currentSlide);
+</script>
+
+</body>
+<footer>
+    <div class="row">
+        <div class="col-sm">
+            <div class="follow-us-text">Connect with us:</div>
+            <div class="social-media-icons-white d-flex ">
+            <a class="social-media-icon" href="https://www.youtube.com/@Konita_YT">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a class="social-media-icon" href="https://www.instagram.com/konita_yt/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="social-media-icon" href="https://x.com/konitatutorials">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a class="social-media-icon" href="https://www.tiktok.com/@konita_yt">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm app-store-img-group" align="right">
+        <a href="https://play.google.com/store/apps/dev?id=6029201245732425144">
+            <img class="app-store-img" src="images/googleplay.4ced544f.webp" width="20%">
+        </a>
+        <a href="https://apps.apple.com/us/developer/berhane-wheeler/id1739441204">
+            <img class="app-store-img" src="images/appstore.c44572b2.webp" width="18%">
+        </a>
+    </div>
+    </div>
+
+    <div class="row">
+
+    </div>
+    <hr style="width: 90%; border-color: white; border-width: 4px; margin: auto;" />
+    <div class="footer-text">Copyright © 2024 Konita. All rights reserved.<br /><div class="footer-margin-bottom">&#8205</div></div>
+
+</footer>
+</html>
