@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "firebase_url": "null",
+    "project_number": "448144006032",
+    "project_id": "don-t-be-late-e3d9b",
+    "storage_bucket": "don-t-be-late-e3d9b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448144006032:android:ad348a969858494d277115",
+        "android_client_info": {
+          "package_name": "com.KonitaGames.DontBeLate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcEhsaZHeKn9LgyA9bDvbo6alP2_qelhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Be Late! - Join the Waitlist</title>
+    <style>
+        @font-face {
+            font-family: 'Jungle Adventurer';
+            src: url('fonts/jungle-adventurer.regular.ttf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevents horizontal scrolling issues */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url('background.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.8);
+            flex-wrap: wrap;
+            min-height: 70px; /* Ensures sufficient height */
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 40px; /* Reduce size */
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .navbar-title {
+            height: 20px;
+            width: auto;
+        }
+
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+
+        #hero h1 {
+            font-family: 'Jungle Adventurer', Arial, sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        #hero h3 {
+            font-size: clamp(1.2rem, 2vw, 2rem);
+        }
+
+        #hero p {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            width: 70%;
+            margin: 10px auto;
+        }
+
+        #hero-card p {
+            font-size: clamp(0.8rem, 1vw, 1rem);
+            width: 100%;
+        }
+        .demo-button {
+            padding: 10px 30px;
+            background: #ffcc00;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .demo-button:hover {
+            background: #ffa500;
+        }
+
+        #hero-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 90%;
+            color: black;
+        }
+
+        #hero-card input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #hero-card button {
+            width: 100%;
+            padding: 10px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .demo-button {
+                padding: 8px 20px;
+                font-size: 16px;
+                align-self: center;
+            }
+            .navbar-brand img {
+                height: 20px; /* Reduce size */
+                width: auto;
+            }
+
+            .navbar-title {
+                height: 16px;
+                width: auto;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar-container">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/KG LOGO SOLO.png" alt="Konita Logo">
+        </a>
+        <a href="#">
+            <img src="images/KG LOGO SOLO2.png" class="navbar-title" alt="Konita Games Text">
+        </a>
+    </div>
+    <a href="https://berhanewhe5.github.io/Dont-Be-Late-Web/">
+        <button class="demo-button">Play Demo</button>
+    </a>
+</header>
+
+<section id="hero">
+    <h1>Don't Be Late!</h1>
+    <h3>Available: Fall 2025</h3>
+    <p>Don’t Be Late! is a 3D platformer for learners. Solve math problems to overcome obstacles and get to school on time.</p>
+    <p>Get ready for an exciting journey through math! Solve problems, level up, and make learning fun.</p>
+    <div id="hero-card">
+        <h2>Join the Waitlist Now!</h2>
+        <p>Be the first to experience this exciting math learning game.</p>
+        <form id="waitlist-form" action="https://formspree.io/f/xwplpqyk" method="POST">
+            <input type="email" placeholder="Enter your email" name="email" required>
+            <button type="submit">Join the Waitlist</button>
+        </form>
+        <p id="success-message" style="display: none; color: green; font-weight: bold;">✅ Thank you for joining the waitlist! 🎉</p>
+    </div>
+</section>
+
+<footer>
+    <p>Follow us on social media:
+        <a href="https://www.youtube.com/@Konita_YT">YouTube</a> |
+        <a href="https://www.linkedin.com/company/konita-games">LinkedIn</a>
+    </p>
+</footer>
+
+<script>
+    document.getElementById("waitlist-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        let form = event.target;
+        let formData = new FormData(form);
+        let response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+            form.style.display = "none";
+            document.getElementById("success-message").style.display = "block";
+        } else {
+            alert("Oops! Something went wrong. Please try again.");
+        }
+    });
+</script>
+
+</body>
+</html>
